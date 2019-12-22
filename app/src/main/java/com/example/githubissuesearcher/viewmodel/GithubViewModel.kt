@@ -26,9 +26,24 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
         repository.insert(contact)
     }
 
+    private var fullName = ""
+    private var descriptions = ""
+    private var stargazersCount = 0
+    private var language = ""
+
     fun insertList(contactList: List<GithubRepo>) {
         for (indices in contactList) {
-            val githubData = GithubData(indices.full_name, indices.description, indices.stargazers_count, indices.language)
+            fullName = ""
+            descriptions = "Not described"
+            stargazersCount = 0
+            language = "Not described"
+
+            // 공란이 있을 수 있는 자료들에 한해 null check, null일 경우에는 default 값을 적
+            if (indices.description != null) descriptions = indices.description
+            if (indices.stargazers_count != null) stargazersCount = indices.stargazers_count
+            if (indices.language != null) language = indices.language
+
+            val githubData = GithubData(indices.full_name, descriptions, stargazersCount, language)
             repository.insert(githubData)
         }
     }

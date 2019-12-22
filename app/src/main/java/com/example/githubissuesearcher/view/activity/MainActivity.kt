@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
@@ -88,11 +89,18 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .subscribe({ result ->
                 githubViewModel.insertList(result.getRepositoryList())
+
+                // 검색결과가 없을 경우의 예외처리 및 피드백
+                if (result.getRepositoryList().isEmpty()) {
+                    Toast.makeText(this, "결과가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+                }
+
             }, {
                     error ->
                 run {
+                    // 검색중 오류가 발생했을 경우의 예외처리 및 피드백
                     error.printStackTrace()
-                    Toast.makeText(this, "결과가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "검색중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
                 }
             })
 
