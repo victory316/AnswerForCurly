@@ -2,40 +2,40 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6529e5501b657472a4ba7290598af467",
+    "identityHash": "4b51c705b57d753f34cb26da163bcfa2",
     "entities": [
       {
         "tableName": "github",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `avatar_url` TEXT NOT NULL, `score` INTEGER NOT NULL, `favorite` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`full_name` TEXT NOT NULL, `description` TEXT NOT NULL, `stargazers_count` INTEGER NOT NULL, `language` TEXT NOT NULL, PRIMARY KEY(`full_name`))",
         "fields": [
           {
-            "fieldPath": "name",
-            "columnName": "name",
+            "fieldPath": "full_name",
+            "columnName": "full_name",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "avatar_url",
-            "columnName": "avatar_url",
+            "fieldPath": "description",
+            "columnName": "description",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "score",
-            "columnName": "score",
+            "fieldPath": "stargazers_count",
+            "columnName": "stargazers_count",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "favorite",
-            "columnName": "favorite",
-            "affinity": "INTEGER",
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "name"
+            "full_name"
           ],
           "autoGenerate": false
         },
@@ -46,7 +46,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6529e5501b657472a4ba7290598af467')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4b51c705b57d753f34cb26da163bcfa2')"
     ]
   }
 }

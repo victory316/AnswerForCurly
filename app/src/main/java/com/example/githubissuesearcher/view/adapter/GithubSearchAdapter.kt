@@ -37,10 +37,10 @@ class GithubSearchAdapter : RecyclerView.Adapter<GithubSearchAdapter.ViewHolder>
         private val languageTv = itemView.findViewById<TextView>(R.id.language_text_view)
 
         fun bind(githubData: GithubData) {
-            nameTv.text = githubData.name
-            descriptionTv.text = "test"
-            starTv.text = "test"
-            languageTv.text = "test"
+            nameTv.text = githubData.full_name
+            descriptionTv.text = githubData.description
+            starTv.text = githubData.stargazers_count.toString()
+            languageTv.text = githubData.language
         }
     }
 

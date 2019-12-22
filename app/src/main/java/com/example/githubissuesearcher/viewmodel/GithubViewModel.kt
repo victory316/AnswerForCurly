@@ -28,7 +28,7 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
 
     fun insertList(contactList: List<GithubRepo>) {
         for (indices in contactList) {
-            val githubData = GithubData(indices.login, indices.avatar_url, indices.score.toInt(), 0)
+            val githubData = GithubData(indices.full_name, indices.description, indices.stargazers_count, indices.language)
             repository.insert(githubData)
         }
     }

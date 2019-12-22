@@ -8,7 +8,7 @@ import com.example.githubissuesearcher.data.local.entity.GithubData
 @Dao
 interface GithubDao {
 
-    @Query("SELECT * FROM github ORDER BY name ASC")
+    @Query("SELECT * FROM github ORDER BY full_name ASC")
     fun getAll(): LiveData<List<GithubData>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -20,6 +20,6 @@ interface GithubDao {
     @Query("DELETE FROM github")
     fun deleteAll()
 
-    @Query("UPDATE github SET favorite = (:input) WHERE name = (:name)")
-    fun updateColumn(input: Int, name: String)
+//    @Query("UPDATE github SET favorite = (:input) WHERE full_name = (:name)")
+//    fun updateColumn(input: Int, name: String)
 }

@@ -8,15 +8,15 @@ import androidx.room.PrimaryKey
 data class GithubData(
 
     @PrimaryKey(autoGenerate = false)
-    @ColumnInfo(name = "name")
-    var name: String,
+    @ColumnInfo(name = "full_name")
+    var full_name: String,
 
-    @ColumnInfo(name = "avatar_url")
-    var avatar_url: String,
+    @ColumnInfo(name = "description")
+    var description: String,
 
-    @ColumnInfo(name = "score")
-    var score: Int,
+    @ColumnInfo(name = "stargazers_count")
+    var stargazers_count: Int,
 
-    @ColumnInfo(name = "favorite")
-    var favorite: Int
+    @ColumnInfo(name = "language")
+    var language: String
 )

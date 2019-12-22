@@ -34,12 +34,12 @@ class GithubRepository(application: Application) {
     }
 
     fun update(input: Int, name: String) {
-        try {
-            val thread = Thread(Runnable {
-                githubDao.updateColumn(input, name)
-            })
-            thread.start()
-        } catch (e: Exception) { }
+//        try {
+//            val thread = Thread(Runnable {
+////                githubDao.updateColumn(input, name)
+//            })
+//            thread.start()
+//        } catch (e: Exception) { }
     }
 
     fun deleteAll() {
