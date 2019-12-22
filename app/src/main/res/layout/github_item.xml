@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="15dp"
+    android:padding="5dp"
     android:background="#66FFFFFF"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="129dp">
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/avatar_image"
+        android:id="@+id/sample_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -22,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="@string/name"
-        android:textSize="25sp"
-        app:layout_constraintLeft_toRightOf="@id/avatar_image"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/sample_icon"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -33,7 +34,8 @@
         android:layout_marginLeft="20dp"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/repository_name"
-        app:layout_constraintLeft_toRightOf="@id/avatar_image"
+        app:layout_constraintBottom_toTopOf="@id/star"
+        app:layout_constraintLeft_toRightOf="@id/sample_icon"
         android:text="@string/description"/>
 
     <ImageView
@@ -43,7 +45,8 @@
         android:src="@drawable/star"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="@id/repository_name"
-        app:layout_constraintTop_toBottomOf="@id/repository_description"/>
+        app:layout_constraintTop_toBottomOf="@id/repository_description"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/star"
