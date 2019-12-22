@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp"
+    android:background="#66FFFFFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="129dp">
+
+    <ImageView
+        android:id="@+id/avatar_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:src="@drawable/folder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repository_name"/>
+
+    <TextView
+        android:id="@+id/repository_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/name"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/avatar_image"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/repository_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/repository_name"
+        app:layout_constraintLeft_toRightOf="@id/avatar_image"
+        android:text="@string/description"/>
+
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/star"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/repository_name"
+        app:layout_constraintTop_toBottomOf="@id/repository_description"/>
+
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:text="5"
+        app:layout_constraintLeft_toRightOf="@id/star_icon"
+        app:layout_constraintTop_toTopOf="@id/star_icon"
+        app:layout_constraintBottom_toBottomOf="@id/star_icon"/>
+
+    <ImageView
+        android:id="@+id/language_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/circle"
+        app:layout_constraintLeft_toRightOf="@id/star"
+        app:layout_constraintTop_toTopOf="@id/star_icon"
+        app:layout_constraintBottom_toBottomOf="@id/star_icon"/>
+
+    <TextView
+        android:id="@+id/language_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:text="Kotlin"
+        app:layout_constraintLeft_toRightOf="@id/language_icon"
+        app:layout_constraintTop_toTopOf="@id/star_icon"
+        app:layout_constraintBottom_toBottomOf="@id/star_icon"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
