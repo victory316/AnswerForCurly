@@ -24,24 +24,6 @@ class GithubRepository(application: Application) {
         } catch (e: Exception) { }
     }
 
-    fun delete(githubData: GithubData) {
-        try {
-            val thread = Thread(Runnable {
-                githubDao.delete(githubData)
-            })
-            thread.start()
-        } catch (e: Exception) { }
-    }
-
-    fun update(input: Int, name: String) {
-//        try {
-//            val thread = Thread(Runnable {
-////                githubDao.updateColumn(input, name)
-//            })
-//            thread.start()
-//        } catch (e: Exception) { }
-    }
-
     fun deleteAll() {
         try {
             val thread = Thread(Runnable {

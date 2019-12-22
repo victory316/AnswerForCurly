@@ -22,10 +22,6 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
         return this.results
     }
 
-    fun insert(contact: GithubData) {
-        repository.insert(contact)
-    }
-
     private var fullName = ""
     private var descriptions = ""
     private var stargazersCount = 0
@@ -46,10 +42,6 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
             val githubData = GithubData(indices.full_name, descriptions, stargazersCount, language)
             repository.insert(githubData)
         }
-    }
-
-    fun updateList(input: Int, name: String) {
-        repository.update(input, name)
     }
 
     fun doSearch() {
