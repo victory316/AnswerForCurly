@@ -28,9 +28,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setupViewModel()
+        setupBinding()
+    }
+
+    private fun setupBinding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.viewModel = githubViewModel
     }
 
     private fun Context.hideKeyboard(view: View) {
