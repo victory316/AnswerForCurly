@@ -3,7 +3,7 @@ package com.example.githubissuesearcher.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.githubissuesearcher.MainActivity
+import com.example.githubissuesearcher.view.activity.MainActivity
 import com.example.githubissuesearcher.data.local.entity.GithubData
 import com.example.githubissuesearcher.data.remote.repository.GithubRepository
 
