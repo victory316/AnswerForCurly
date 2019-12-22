@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.example.githubissuesearcher.viewmodel.GithubViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,6 +43,7 @@
             android:src="@drawable/search_icon"
             android:layout_marginRight="10dp"
             android:scaleType="centerCrop"
+            android:onClick="@{() -> viewModel.doSearch()}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/search_edit_text"
             app:layout_constraintBottom_toBottomOf="@id/search_edit_text"/>

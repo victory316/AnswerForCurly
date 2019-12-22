@@ -1,6 +1,7 @@
 package com.example.githubissuesearcher.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.githubissuesearcher.view.activity.MainActivity
@@ -35,7 +36,8 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun doSearch() {
-
+        Log.d("clickTest", "click click")
+        githubView.doSearch()
     }
 
     fun setView(view: MainActivity) {
