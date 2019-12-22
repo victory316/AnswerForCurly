@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ *  GithubDatabase
+ *
+ *  - Room 에 저장하기 위해 정의하는 data class
+ */
 @Entity(tableName= "github")
 data class GithubData(
 

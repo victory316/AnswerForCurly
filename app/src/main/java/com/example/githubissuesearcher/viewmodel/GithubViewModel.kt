@@ -9,6 +9,12 @@ import com.example.githubissuesearcher.view.activity.MainActivity
 import com.example.githubissuesearcher.data.local.entity.GithubData
 import com.example.githubissuesearcher.data.remote.repository.GithubRepository
 
+/**
+ *  GithubViewModel
+ *
+ *  - LiveData를 통해 데이터를 가져오고, 검색 및 아이템 추가시의 예외처리 수행
+ */
+
 class GithubViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository =

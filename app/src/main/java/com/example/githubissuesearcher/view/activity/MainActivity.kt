@@ -21,6 +21,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
+/**
+ *  MainActivity
+ */
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -76,7 +80,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun doSearch() {
-        // 키보드 숨
+
+        // 검색 이후 키보드를 숨김
         hideKeyboard()
 
         val target = binding.searchEditText.text.toString()
@@ -105,4 +110,18 @@ class MainActivity : AppCompatActivity() {
         githubViewModel.deleteAll()
     }
 
+    // 액티비티의 상태에 따른 disposable 관리
+    override fun onDestroy() {
+        if (!searchDisposable!!.isDisposed) {
+            searchDisposable!!.dispose()
+        }
+        super.onDestroy()
+    }
+
+    override fun onStop() {
+        if (!searchDisposable!!.isDisposed) {
+            searchDisposable!!.dispose()
+        }
+        super.onStop()
+    }
 }
