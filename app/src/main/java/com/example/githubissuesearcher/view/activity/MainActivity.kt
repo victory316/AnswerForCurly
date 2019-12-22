@@ -87,8 +87,7 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({ result ->
-//                githubViewModel.insertList(result.name)
-
+                githubViewModel.insertList(result.getRepositoryList())
             }, {
                     error ->
                 run {

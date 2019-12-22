@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.example.githubissuesearcher.data.GithubRepo
 import com.example.githubissuesearcher.view.activity.MainActivity
 import com.example.githubissuesearcher.data.local.entity.GithubData
 import com.example.githubissuesearcher.data.remote.repository.GithubRepository
@@ -25,9 +26,10 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
         repository.insert(contact)
     }
 
-    fun insertList(contactList: List<GithubRepository>) {
+    fun insertList(contactList: List<GithubRepo>) {
         for (indices in contactList) {
-
+            val githubData = GithubData(indices.login, indices.avatar_url, indices.score.toInt(), 0)
+            repository.insert(githubData)
         }
     }
 
