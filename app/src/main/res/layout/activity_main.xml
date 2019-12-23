@@ -22,6 +22,7 @@
             android:minLines="1"
             android:layout_margin="10dp"
             android:inputType="text"
+            tools:ignore="LabelFor"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/search_button"
             app:layout_constraintTop_toTopOf="parent"

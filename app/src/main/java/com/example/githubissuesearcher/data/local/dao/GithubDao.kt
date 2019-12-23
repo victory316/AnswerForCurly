@@ -18,9 +18,6 @@ interface GithubDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(githubData: GithubData)
 
-    @Delete
-    fun delete(githubData: GithubData)
-
     @Query("DELETE FROM github")
     fun deleteAll()
 }
