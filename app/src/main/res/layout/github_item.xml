@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:src="@drawable/folder"
+        android:contentDescription="@string/sample_icon_desc"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@id/repository_name"/>
 
@@ -49,6 +50,7 @@
         android:layout_height="25dp"
         android:src="@drawable/star"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/star_icon_desc"
         app:layout_constraintLeft_toLeftOf="@id/repository_name"
         app:layout_constraintTop_toBottomOf="@id/repository_description"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -69,6 +71,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/circle"
+        android:contentDescription="@string/language_icon_desc"
         app:layout_constraintLeft_toRightOf="@id/star"
         app:layout_constraintTop_toTopOf="@id/star_icon"
         app:layout_constraintBottom_toBottomOf="@id/star_icon"/>
