@@ -10,6 +10,11 @@ import com.example.githubissuesearcher.data.local.entity.GithubData
 import com.example.githubissuesearcher.view.activity.MainActivity
 import com.example.githubissuesearcher.viewmodel.GithubViewModel
 
+/**
+ *  GithubSearchAdapter
+ *
+ *  - Github RecyclerView의 item 내용 설정
+ */
 
 class GithubSearchAdapter : RecyclerView.Adapter<GithubSearchAdapter.ViewHolder>() {
     private var contacts: List<GithubData> = listOf()

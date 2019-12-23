@@ -4,7 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.githubissuesearcher.data.local.entity.GithubData
 
-// Room DB 구현에 필요한 DAO 클래스
+/**
+ *  GithubDao
+ *
+ *  - Room DB와의 Query 수행을 위한 Dao interface
+ */
 @Dao
 interface GithubDao {
 
@@ -14,12 +18,6 @@ interface GithubDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(githubData: GithubData)
 
-    @Delete
-    fun delete(githubData: GithubData)
-
     @Query("DELETE FROM github")
     fun deleteAll()
-
-//    @Query("UPDATE github SET favorite = (:input) WHERE full_name = (:name)")
-//    fun updateColumn(input: Int, name: String)
 }

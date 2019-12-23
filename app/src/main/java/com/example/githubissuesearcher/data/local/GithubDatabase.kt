@@ -7,6 +7,11 @@ import androidx.room.RoomDatabase
 import com.example.githubissuesearcher.data.local.dao.GithubDao
 import com.example.githubissuesearcher.data.local.entity.GithubData
 
+/**
+ *  GithubDatabase
+ *
+ *  - Room database 설정
+ */
 @Database(entities = [GithubData::class], version =1)
 abstract class GithubDatabase: RoomDatabase() {
 

@@ -2,13 +2,11 @@ package com.example.githubissuesearcher.view.activity
 
 import android.app.Activity
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -22,6 +20,10 @@ import com.example.githubissuesearcher.viewmodel.GithubViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+
+/**
+ *  MainActivity
+ */
 
 class MainActivity : AppCompatActivity() {
 
@@ -78,7 +80,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun doSearch() {
-        // 키보드 숨
+
+        // 검색 이후 키보드를 숨김
         hideKeyboard()
 
         val target = binding.searchEditText.text.toString()
@@ -107,4 +110,18 @@ class MainActivity : AppCompatActivity() {
         githubViewModel.deleteAll()
     }
 
+    // 액티비티의 상태에 따른 disposable 관리
+    override fun onDestroy() {
+        if (!searchDisposable!!.isDisposed) {
+            searchDisposable!!.dispose()
+        }
+        super.onDestroy()
+    }
+
+    override fun onStop() {
+        if (!searchDisposable!!.isDisposed) {
+            searchDisposable!!.dispose()
+        }
+        super.onStop()
+    }
 }

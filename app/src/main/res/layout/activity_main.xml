@@ -22,9 +22,11 @@
             android:minLines="1"
             android:layout_margin="10dp"
             android:inputType="text"
+            tools:ignore="LabelFor"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/search_button"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAutofill="no" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/search_recycler_view"
@@ -47,7 +49,8 @@
             android:onClick="@{(v) -> viewModel.doSearch()}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/search_edit_text"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"/>
+            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+            android:contentDescription="@string/search_button_desc" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

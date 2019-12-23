@@ -6,6 +6,13 @@ import com.example.githubissuesearcher.data.local.GithubDatabase
 import com.example.githubissuesearcher.data.local.dao.GithubDao
 import com.example.githubissuesearcher.data.local.entity.GithubData
 
+/**
+ *  GithubApi
+ *
+ *  - /search/repositories 를 통해 검색값으로부터 관련된 json 데이터를 수신
+ *  - 페이지 및 아이템의 갯수 설정
+ */
+
 class GithubRepository(application: Application) {
 
     private val githubDatabase = GithubDatabase.getInstance(application)!!
@@ -22,24 +29,6 @@ class GithubRepository(application: Application) {
                 githubDao.insert(githubData) })
             thread.start()
         } catch (e: Exception) { }
-    }
-
-    fun delete(githubData: GithubData) {
-        try {
-            val thread = Thread(Runnable {
-                githubDao.delete(githubData)
-            })
-            thread.start()
-        } catch (e: Exception) { }
-    }
-
-    fun update(input: Int, name: String) {
-//        try {
-//            val thread = Thread(Runnable {
-////                githubDao.updateColumn(input, name)
-//            })
-//            thread.start()
-//        } catch (e: Exception) { }
     }
 
     fun deleteAll() {
