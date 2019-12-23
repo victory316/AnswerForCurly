@@ -1,13 +1,12 @@
 package com.example.githubissuesearcher.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.githubissuesearcher.data.GithubRepo
-import com.example.githubissuesearcher.view.activity.MainActivity
 import com.example.githubissuesearcher.data.local.entity.GithubData
 import com.example.githubissuesearcher.data.remote.repository.GithubRepository
+import com.example.githubissuesearcher.view.activity.MainActivity
 
 /**
  *  GithubViewModel
@@ -35,12 +34,14 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
 
     fun insertList(contactList: List<GithubRepo>) {
         for (indices in contactList) {
+
+            // 데이터가 없을 경우를 대비한 기본값 설정
             fullName = ""
             descriptions = "Not described"
             stargazersCount = 0
             language = "Not described"
 
-            // 공란이 있을 수 있는 자료들에 한해 null check, null일 경우에는 default 값을 적
+            // 공란이 있을 수 있는 자료들에 한해 null check, null일 경우에는 default 값을 적용
             if (indices.description != null) descriptions = indices.description
             if (indices.stargazers_count != null) stargazersCount = indices.stargazers_count
             if (indices.language != null) language = indices.language
@@ -51,7 +52,6 @@ class GithubViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun doSearch() {
-        Log.d("clickTest", "click click")
         githubView.doSearch()
     }
 
