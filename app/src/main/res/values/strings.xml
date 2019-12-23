@@ -2,4 +2,15 @@
     <string name="app_name">GithubSearcher</string>
     <string name="name">name</string>
     <string name="description">description</string>
+
+    <!-- 프리뷰를 위한 샘플 String  -->
+    <string name="star_count">5</string>
+    <string name="language">Kotlin</string>
+
+    <!-- ContentDescription을 위한 String -->
+    <string name="search_button_desc">Search button</string>
+    <string name="sample_icon_desc">Sample icon</string>
+    <string name="star_icon_desc">Sample star icon</string>
+    <string name="language_icon_desc">Sample language icon</string>
+
 </resources>
